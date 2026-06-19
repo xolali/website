@@ -1,4 +1,5 @@
 import { NextResponse } from "next/server";
+import { deliverNotification } from "@/lib/notify";
 
 export const runtime = "nodejs";
 
@@ -34,9 +35,13 @@ export async function POST(request: Request) {
     return NextResponse.json({ error: "Consent is required." }, { status: 422 });
   }
 
-  // TODO: deliver to CONTACT_INBOX via your email/CRM provider.
-  // Intentionally avoids logging PII to server logs.
-  console.info("[contact] new enquiry", { topic: data.topic ?? "General enquiry" });
+  const inbox = process.env.CONTACT_INBOX ?? "hello@dreamscapesystems.com";
+  await deliverNotification({
+    to: inbox,
+    replyTo: data.email,
+    subject: `[Contact] ${data.topic ?? "General enquiry"}: ${data.subject ?? "(no subject)"}`,
+    text: `From: ${data.name} <${data.email}>\nTopic: ${data.topic ?? "General enquiry"}\n\n${data.message}`,
+  });
 
   return NextResponse.json({ ok: true });
 }

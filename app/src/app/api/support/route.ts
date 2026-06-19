@@ -1,4 +1,5 @@
 import { NextResponse } from "next/server";
+import { deliverNotification } from "@/lib/notify";
 
 export const runtime = "nodejs";
 
@@ -42,11 +43,12 @@ export async function POST(request: Request) {
 
   const ticket = generateTicketRef();
 
-  // TODO: create a ticket in your helpdesk (e.g. via API) and email confirmation.
-  console.info("[support] new ticket", {
-    ticket,
-    category: data.category,
-    priority: data.priority,
+  const inbox = process.env.SUPPORT_INBOX ?? "support@dreamscapesystems.com";
+  await deliverNotification({
+    to: inbox,
+    replyTo: data.email,
+    subject: `[Support ${ticket}] (${data.priority ?? "Normal"}) ${data.subject}`,
+    text: `Ticket: ${ticket}\nFrom: ${data.email}\nCategory: ${data.category ?? "—"}\nPriority: ${data.priority ?? "Normal"}\n\n${data.description}`,
   });
 
   return NextResponse.json({ ok: true, ticket });

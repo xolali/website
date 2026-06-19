@@ -58,7 +58,7 @@ export function PricingTable() {
             <p className="mt-1 text-sm text-slate-400">{plan.cadence}</p>
             {plan.note && <p className="mt-1 text-xs text-slate-400">{plan.note}</p>}
             <Button
-              href={`/contact?plan=${plan.id}`}
+              href={`/checkout?plan=${plan.id}`}
               variant={plan.featured ? "primary" : "secondary"}
               className="mt-6 w-full"
             >

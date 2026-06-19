@@ -3,7 +3,7 @@ import { Logo } from "./Logo";
 import { Container } from "@/components/ui/primitives";
 import { footerNav, siteConfig } from "@/lib/site";
 
-const paymentBadges = ["Paystack", "Visa", "Mastercard", "Verve", "SSL"];
+const paymentBadges = ["Paystack", "Visa", "Mastercard", "MTN MoMo", "SSL"];
 
 export function SiteFooter() {
   return (

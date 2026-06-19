@@ -41,7 +41,7 @@ export function buildMetadata({
       title: fullTitle,
       description,
       siteName: siteConfig.name,
-      locale: "en_NG",
+      locale: "en_GH",
       images: [{ url: ogImage, width: 1200, height: 630, alt: siteConfig.name }],
     },
     twitter: {

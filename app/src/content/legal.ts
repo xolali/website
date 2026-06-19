@@ -11,8 +11,6 @@ export type LegalDoc = {
   sections: LegalSection[];
 };
 
-const PLACEHOLDER_NOTE =
-  "This policy is written to satisfy Paystack merchant review and applicable data-protection law. Replace bracketed placeholders and have it reviewed by qualified counsel before launch.";
 
 export const legalDocs: LegalDoc[] = [
   {
@@ -67,7 +65,7 @@ export const legalDocs: LegalDoc[] = [
       {
         heading: "8. Governing Law",
         body: [
-          "These Terms are governed by the laws of [jurisdiction]. Questions? Contact hello@dreamscapesystems.com.",
+          "These Terms are governed by the laws of the Republic of Ghana, and the courts of Ghana have jurisdiction, without prejudice to any mandatory consumer-protection rights you have in your country of residence as we expand across West Africa. Questions? Contact hello@dreamscapesystems.com.",
         ],
       },
     ],
@@ -101,7 +99,7 @@ export const legalDocs: LegalDoc[] = [
       {
         heading: "4. Legal Bases",
         body: [
-          "Where required (including under the Nigeria Data Protection Act / NDPR and the GDPR), we rely on performance of a contract, consent, legitimate interests, and legal obligation.",
+          "Where required (including under Ghana's Data Protection Act, 2012 (Act 843), and — as we expand into Nigeria and West Africa — the Nigeria Data Protection Act / NDPR and the GDPR where applicable), we rely on performance of a contract, consent, legitimate interests, and legal obligation.",
         ],
       },
       {
@@ -113,7 +111,7 @@ export const legalDocs: LegalDoc[] = [
       {
         heading: "6. Your Rights",
         body: [
-          "Subject to applicable law, you may access, correct, delete, object to or restrict processing of your data, withdraw consent, request portability, and lodge a complaint with your data protection authority. To exercise these rights, email privacy@dreamscapesystems.com.",
+          "Subject to applicable law, you may access, correct, delete, object to or restrict processing of your data, withdraw consent, request portability, and lodge a complaint with your data protection authority — in Ghana, the Data Protection Commission. To exercise these rights, email privacy@dreamscapesystems.com.",
         ],
       },
       {
@@ -218,8 +216,6 @@ export const legalDocs: LegalDoc[] = [
     ],
   },
 ];
-
-export const legalReviewNote = PLACEHOLDER_NOTE;
 
 export function getLegalDoc(slug: string): LegalDoc | undefined {
   return legalDocs.find((d) => d.slug === slug);

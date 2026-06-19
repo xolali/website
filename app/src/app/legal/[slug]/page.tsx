@@ -2,7 +2,7 @@ import { notFound } from "next/navigation";
 import Link from "next/link";
 import { Container, Section } from "@/components/ui/primitives";
 import { JsonLd } from "@/components/JsonLd";
-import { legalDocs, getLegalDoc, legalReviewNote } from "@/content/legal";
+import { legalDocs, getLegalDoc } from "@/content/legal";
 import { buildMetadata, breadcrumbJsonLd } from "@/lib/seo";
 import { formatDate } from "@/lib/utils";
 
@@ -68,9 +68,6 @@ export default async function LegalPage({
         <Container>
           <div className="grid gap-12 lg:grid-cols-[1fr_240px]">
             <div className="prose-ds">
-              <p className="rounded-md border border-warning/30 bg-warning/10 p-4 text-sm text-slate-400">
-                <strong className="text-quartz">Note:</strong> {legalReviewNote}
-              </p>
               <p className="lead">{doc.intro}</p>
               {doc.sections.map((section) => (
                 <section key={section.heading}>

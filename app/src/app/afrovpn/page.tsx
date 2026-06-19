@@ -49,9 +49,9 @@ const productJsonLd = {
   brand: { "@type": "Brand", name: siteConfig.name },
   offers: {
     "@type": "AggregateOffer",
-    priceCurrency: "NGN",
-    lowPrice: "2000",
-    highPrice: "4500",
+    priceCurrency: "GHS",
+    lowPrice: "32",
+    highPrice: "70",
     offerCount: 3,
   },
 };

@@ -110,35 +110,51 @@ export type PricingPlan = {
   note?: string;
   featured?: boolean;
   badge?: string;
+  /** Total charge for the billing period, in minor units (pesewas) for Paystack. */
+  amountMinor: number;
+  /** Currency code charged via Paystack. */
+  currency: "GHS";
 };
 
+// Prices are in Ghana Cedi (GHS). Adjust the figures to Dreamscape's final
+// pricing; amountMinor must equal the period total in pesewas (GHS × 100).
 export const pricingPlans: PricingPlan[] = [
   {
     id: "monthly",
     name: "Monthly",
     interval: "monthly",
-    price: "₦4,500",
+    price: "GH₵70",
     cadence: "per month",
+    amountMinor: 7000,
+    currency: "GHS",
   },
   {
     id: "annual",
     name: "Annual",
     interval: "annual",
-    price: "₦2,700",
+    price: "GH₵42",
     cadence: "per month, billed yearly",
-    note: "₦32,400 billed once a year",
+    note: "GH₵504 billed once a year",
     featured: true,
     badge: "Best value",
+    amountMinor: 50400,
+    currency: "GHS",
   },
   {
     id: "biennial",
     name: "2-Year",
     interval: "biennial",
-    price: "₦2,000",
+    price: "GH₵32",
     cadence: "per month, billed every 2 years",
-    note: "₦48,000 billed once every two years",
+    note: "GH₵768 billed once every two years",
+    amountMinor: 76800,
+    currency: "GHS",
   },
 ];
+
+export function getPlan(id: string): PricingPlan | undefined {
+  return pricingPlans.find((p) => p.id === id);
+}
 
 export const pricingIncludes = [
   "Unlimited bandwidth",

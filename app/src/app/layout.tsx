@@ -4,6 +4,7 @@ import "./globals.css";
 import { ThemeProvider } from "@/components/layout/ThemeProvider";
 import { SiteHeader } from "@/components/layout/SiteHeader";
 import { SiteFooter } from "@/components/layout/SiteFooter";
+import { CookieConsent } from "@/components/layout/CookieConsent";
 import { JsonLd } from "@/components/JsonLd";
 import { buildMetadata, organizationJsonLd } from "@/lib/seo";
 
@@ -53,6 +54,7 @@ export default function RootLayout({
             {children}
           </main>
           <SiteFooter />
+          <CookieConsent />
         </ThemeProvider>
       </body>
     </html>

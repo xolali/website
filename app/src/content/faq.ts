@@ -121,7 +121,7 @@ export const faqCategories: FaqCategory[] = [
         id: "payment-methods",
         question: "What payment methods do you accept?",
         answer:
-          "We accept major debit and credit cards (Visa, Mastercard, and Verve) and supported local payment methods, all processed securely through Paystack.",
+          "We accept mobile money (MTN MoMo, Vodafone Cash, and AirtelTigo Money) and major debit and credit cards (Visa and Mastercard), all processed securely through Paystack. As we expand across West Africa, we'll add more local payment methods.",
       },
       {
         id: "safe-to-pay",

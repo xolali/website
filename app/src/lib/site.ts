@@ -12,15 +12,28 @@ export const siteConfig = {
   url: process.env.NEXT_PUBLIC_SITE_URL ?? "https://dreamscapesystems.com",
   ogImage: "/og/default.png",
   locale: "en",
-  // Company / legal — replace placeholders with finalized details before launch.
+  // Dreamscape Systems is a Ghana-registered company. Services launch in Ghana,
+  // then Nigeria and the wider West Africa. Primary currency is the Ghana Cedi.
+  country: "Ghana",
+  countryCode: "GH",
+  currency: "GHS",
+  currencySymbol: "GH₵",
+  // Company / legal details.
+  // NOTE: The three identity values below are templated placeholders. Replace
+  // them with Dreamscape's real Registrar General's Department registration
+  // number, registered Accra address, and a monitored +233 phone line BEFORE
+  // submitting for Paystack review. They can also be supplied at deploy time
+  // via the COMPANY_* environment variables without changing code.
   company: {
-    registrationNumber: "RC 0000000",
-    address: "Registered address — to be finalized",
+    registrationNumber:
+      process.env.NEXT_PUBLIC_COMPANY_REG ?? "CS-0000000000 (Ghana RGD — to be confirmed)",
+    address:
+      process.env.NEXT_PUBLIC_COMPANY_ADDRESS ?? "Accra, Ghana — registered address to be confirmed",
     email: "hello@dreamscapesystems.com",
     supportEmail: "support@dreamscapesystems.com",
     privacyEmail: "privacy@dreamscapesystems.com",
-    phone: "+234 000 000 0000",
-    hours: "Mon–Fri, 9:00–18:00 WAT",
+    phone: process.env.NEXT_PUBLIC_COMPANY_PHONE ?? "+233 00 000 0000",
+    hours: "Mon–Fri, 9:00–17:00 GMT",
   },
   social: {
     twitter: "@dreamscapehq",
