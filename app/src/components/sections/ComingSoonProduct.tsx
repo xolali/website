@@ -5,6 +5,7 @@ import { Reveal } from "@/components/motion/Reveal";
 import { WaitlistForm } from "@/components/forms/WaitlistForm";
 import { Button } from "@/components/ui/Button";
 import type { Feature } from "@/content/products";
+import type { ReactNode } from "react";
 
 export function ComingSoonProduct({
   name,
@@ -13,6 +14,7 @@ export function ComingSoonProduct({
   description,
   problems,
   capabilities,
+  visual,
 }: {
   name: string;
   productKey: string;
@@ -20,6 +22,7 @@ export function ComingSoonProduct({
   description: string;
   problems: string[];
   capabilities: Feature[];
+  visual?: ReactNode;
 }) {
   return (
     <>
@@ -29,18 +32,25 @@ export function ComingSoonProduct({
           className="pointer-events-none absolute inset-0 bg-[radial-gradient(55%_45%_at_75%_0%,rgba(245,200,66,0.10),transparent)]"
         />
         <Container className="relative py-20 md:py-28">
-          <div className="max-w-3xl">
-            <div className="mb-4 flex items-center gap-2">
-              <Eyebrow>{name}</Eyebrow>
-              <Badge tone="soon">Coming soon</Badge>
+          <div className="grid items-center gap-12 lg:grid-cols-[1.05fr_0.95fr]">
+            <div className="max-w-2xl">
+              <div className="mb-4 flex items-center gap-2">
+                <Eyebrow>{name}</Eyebrow>
+                <Badge tone="soon">Coming soon</Badge>
+              </div>
+              <h1 className="font-display text-4xl font-extrabold leading-[1.05] tracking-tight text-quartz sm:text-5xl md:text-display-xl">
+                {title}
+              </h1>
+              <p className="mt-6 max-w-xl text-lg text-slate-400">{description}</p>
+              <div className="mt-8">
+                <WaitlistForm product={productKey} />
+              </div>
             </div>
-            <h1 className="font-display text-4xl font-extrabold leading-[1.05] tracking-tight text-quartz sm:text-5xl md:text-display-xl">
-              {title}
-            </h1>
-            <p className="mt-6 max-w-2xl text-lg text-slate-400">{description}</p>
-            <div className="mt-8">
-              <WaitlistForm product={productKey} />
-            </div>
+            {visual && (
+              <div aria-hidden className="relative hidden lg:block">
+                {visual}
+              </div>
+            )}
           </div>
         </Container>
       </section>

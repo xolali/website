@@ -1,4 +1,5 @@
 import { PageHero } from "@/components/sections/PageHero";
+import { NetworkMap } from "@/components/illustrations/NetworkMap";
 import { Container, Section } from "@/components/ui/primitives";
 import { Accordion } from "@/components/ui/Accordion";
 import { CTASection } from "@/components/sections/CTASection";
@@ -37,6 +38,7 @@ export default function FaqPage() {
         eyebrow="Help & FAQ"
         title="Questions, answered."
         description="Everything you need to know about Dreamscape Systems, AfroVPN, billing, privacy, and what's coming next."
+        visual={<NetworkMap className="mx-auto max-w-[440px]" />}
       />
       <Section>
         <Container>

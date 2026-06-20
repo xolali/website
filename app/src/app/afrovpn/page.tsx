@@ -6,6 +6,7 @@ import { Container, Section, Eyebrow } from "@/components/ui/primitives";
 import { Reveal } from "@/components/motion/Reveal";
 import { CTASection } from "@/components/sections/CTASection";
 import { PricingTable } from "@/components/sections/PricingTable";
+import { TunnelMotif } from "@/components/illustrations/TunnelMotif";
 import { JsonLd } from "@/components/JsonLd";
 import { afrovpnFeatures, afrovpnUseCases } from "@/content/products";
 import { buildMetadata } from "@/lib/seo";
@@ -68,7 +69,8 @@ export default function AfroVpnPage() {
           className="pointer-events-none absolute inset-0 bg-[radial-gradient(55%_45%_at_75%_0%,rgba(255,107,53,0.12),transparent)]"
         />
         <Container className="relative py-20 md:py-28">
-          <div className="max-w-3xl">
+          <div className="grid items-center gap-12 lg:grid-cols-[1.05fr_0.95fr]">
+            <div className="max-w-2xl">
             <div className="mb-4 flex items-center gap-2">
               <Eyebrow>AfroVPN</Eyebrow>
               <Badge tone="live">Available now</Badge>
@@ -76,7 +78,7 @@ export default function AfroVpnPage() {
             <h1 className="font-display text-4xl font-extrabold leading-[1.05] tracking-tight text-quartz sm:text-5xl md:text-display-xl">
               Your internet. Private, fast, and yours.
             </h1>
-            <p className="mt-6 max-w-2xl text-lg text-slate-400">
+            <p className="mt-6 max-w-xl text-lg text-slate-400">
               AfroVPN secures your connection, protects your data, and gives you unrestricted
               access to the open internet — from anywhere. Built for African networks. Trusted
               across 40+ countries. No logs, ever.
@@ -97,6 +99,10 @@ export default function AfroVpnPage() {
                 </li>
               ))}
             </ul>
+            </div>
+            <div aria-hidden className="relative hidden lg:block">
+              <TunnelMotif className="mx-auto max-w-[520px]" />
+            </div>
           </div>
         </Container>
       </section>

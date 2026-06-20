@@ -41,6 +41,23 @@
   :focus-visible {
     @apply outline-none ring-2 ring-aurora ring-offset-2 ring-offset-midnight;
   }
+
+  /* Subtle node pulse for illustrations. Disabled by the reduced-motion rule above. */
+  @keyframes dsPulse {
+    0%, 100% {
+      opacity: 0.35;
+      transform: scale(1);
+    }
+    50% {
+      opacity: 0.9;
+      transform: scale(1.06);
+    }
+  }
+  .ds-node-pulse {
+    transform-box: fill-box;
+    transform-origin: center;
+    animation: dsPulse 3.2s ease-in-out infinite;
+  }
 }
 
 @layer components {

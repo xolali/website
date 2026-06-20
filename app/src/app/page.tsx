@@ -6,6 +6,7 @@ import { Badge } from "@/components/ui/primitives";
 import { Container, Section, Eyebrow } from "@/components/ui/primitives";
 import { Reveal } from "@/components/motion/Reveal";
 import { CTASection } from "@/components/sections/CTASection";
+import { NetworkMap } from "@/components/illustrations/NetworkMap";
 import { products } from "@/content/products";
 import { buildMetadata } from "@/lib/seo";
 
@@ -56,12 +57,13 @@ export default function HomePage() {
           className="pointer-events-none absolute inset-0 bg-[radial-gradient(60%_50%_at_70%_0%,rgba(255,107,53,0.12),transparent)]"
         />
         <Container className="relative py-20 md:py-28">
-          <div className="max-w-3xl">
+          <div className="grid items-center gap-12 lg:grid-cols-[1.05fr_0.95fr]">
+            <div className="max-w-2xl">
             <Eyebrow>African Digital Infrastructure</Eyebrow>
             <h1 className="font-display text-4xl font-extrabold leading-[1.05] tracking-tight text-quartz sm:text-5xl md:text-display-2xl">
               The infrastructure for Africa&apos;s place in the global economy.
             </h1>
-            <p className="mt-6 max-w-2xl text-lg text-slate-400">
+            <p className="mt-6 max-w-xl text-lg text-slate-400">
               Dreamscape Systems builds the digital foundations — connectivity, payments,
               and assets — that let Africans participate fully, securely, and on their own
               terms. We start with private, fast internet. We&apos;re building the rest.
@@ -86,6 +88,10 @@ export default function HomePage() {
                 <span className="h-1.5 w-1.5 rounded-full bg-aurora" /> Secured payments
               </li>
             </ul>
+            </div>
+            <div aria-hidden className="relative hidden lg:block">
+              <NetworkMap className="mx-auto max-w-[520px]" />
+            </div>
           </div>
         </Container>
       </section>

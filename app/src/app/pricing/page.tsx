@@ -1,4 +1,5 @@
 import { PageHero } from "@/components/sections/PageHero";
+import { TunnelMotif } from "@/components/illustrations/TunnelMotif";
 import { Container, Section } from "@/components/ui/primitives";
 import { PricingTable } from "@/components/sections/PricingTable";
 import { Accordion } from "@/components/ui/Accordion";
@@ -40,6 +41,7 @@ export default function PricingPage() {
         eyebrow="Pricing"
         title="Simple, honest pricing. Cancel anytime."
         description="One plan, every feature. The longer you commit, the more you save. No hidden fees, no surprise renewals you didn't agree to."
+        visual={<TunnelMotif className="mx-auto max-w-[460px]" />}
       />
       <Section>
         <Container>

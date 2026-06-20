@@ -1,4 +1,5 @@
 import { ComingSoonProduct } from "@/components/sections/ComingSoonProduct";
+import { AssetLattice } from "@/components/illustrations/ProductMotifs";
 import { dreamassetsCapabilities } from "@/content/products";
 import { buildMetadata } from "@/lib/seo";
 
@@ -22,6 +23,7 @@ export default function DreamAssetsPage() {
         "Transparency and clear risk disclosure are too often missing.",
       ]}
       capabilities={dreamassetsCapabilities}
+      visual={<AssetLattice className="mx-auto max-w-[480px]" />}
     />
   );
 }

@@ -10,6 +10,7 @@ import {
   CheckCircle2,
 } from "lucide-react";
 import { PageHero } from "@/components/sections/PageHero";
+import { NetworkMap } from "@/components/illustrations/NetworkMap";
 import { Container, Section, Eyebrow } from "@/components/ui/primitives";
 import { Card } from "@/components/ui/Card";
 import { Reveal } from "@/components/motion/Reveal";
@@ -55,6 +56,7 @@ export default function SupportPage() {
         eyebrow="Support"
         title="We're here when you need us."
         description="Real help from real people, 24/7. Most questions are answered below — and when you need us directly, we respond within 24 hours."
+        visual={<NetworkMap className="mx-auto max-w-[440px]" />}
       />
 
       <Section>

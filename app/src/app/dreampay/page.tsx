@@ -1,4 +1,5 @@
 import { ComingSoonProduct } from "@/components/sections/ComingSoonProduct";
+import { PaymentFlow } from "@/components/illustrations/ProductMotifs";
 import { dreampayCapabilities } from "@/content/products";
 import { buildMetadata } from "@/lib/seo";
 
@@ -22,6 +23,7 @@ export default function DreamPayPage() {
         "The rails were never designed for movement within Africa.",
       ]}
       capabilities={dreampayCapabilities}
+      visual={<PaymentFlow className="mx-auto max-w-[480px]" />}
     />
   );
 }

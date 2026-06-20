@@ -1,4 +1,5 @@
 import { PageHero } from "@/components/sections/PageHero";
+import { NetworkMap } from "@/components/illustrations/NetworkMap";
 import { Container, Section, Eyebrow } from "@/components/ui/primitives";
 import { Card } from "@/components/ui/Card";
 import { Reveal } from "@/components/motion/Reveal";
@@ -29,6 +30,7 @@ export default function AboutPage() {
         eyebrow="About Dreamscape Systems"
         title="We're building the digital infrastructure Africa was owed."
         description="Dreamscape Systems is an African digital infrastructure company. We build the foundational systems — connectivity, payments, and assets — that let Africans participate fully in the global digital economy."
+        visual={<NetworkMap className="mx-auto max-w-[480px]" />}
       />
 
       <Section>

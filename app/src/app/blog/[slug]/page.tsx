@@ -4,6 +4,7 @@ import { Clock } from "lucide-react";
 import { Container, Section, Badge } from "@/components/ui/primitives";
 import { CTASection } from "@/components/sections/CTASection";
 import { JsonLd } from "@/components/JsonLd";
+import { BlogCover } from "@/components/illustrations/BlogCover";
 import { blogPosts, getPostBySlug, type BlogBlock } from "@/content/blog";
 import { buildMetadata, breadcrumbJsonLd } from "@/lib/seo";
 import { siteConfig } from "@/lib/site";
@@ -105,6 +106,9 @@ export default async function BlogArticlePage({
               <p className="mt-4 text-slate-400">
                 {post.author} · {formatDate(post.date)}
               </p>
+            </div>
+            <div aria-hidden className="mt-10 overflow-hidden rounded-xl border border-white/10">
+              <BlogCover category={post.category} />
             </div>
           </Container>
         </header>

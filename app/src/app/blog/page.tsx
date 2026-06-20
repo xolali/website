@@ -4,6 +4,7 @@ import { PageHero } from "@/components/sections/PageHero";
 import { Container, Section, Badge } from "@/components/ui/primitives";
 import { Card } from "@/components/ui/Card";
 import { Reveal } from "@/components/motion/Reveal";
+import { BlogCover } from "@/components/illustrations/BlogCover";
 import { blogPosts } from "@/content/blog";
 import { buildMetadata } from "@/lib/seo";
 import { formatDate } from "@/lib/utils";
@@ -33,8 +34,10 @@ export default function BlogIndexPage() {
               <Card interactive className="md:flex md:items-center md:gap-8">
                 <div
                   aria-hidden
-                  className="mb-6 aspect-[16/9] rounded-lg bg-gradient-to-br from-aurora/20 via-slate-800 to-helios/10 md:mb-0 md:w-1/2"
-                />
+                  className="mb-6 overflow-hidden rounded-lg md:mb-0 md:w-1/2"
+                >
+                  <BlogCover category={featured.category} />
+                </div>
                 <div className="md:w-1/2">
                   <div className="flex items-center gap-3 text-sm text-slate-400">
                     <Badge tone="neutral">{featured.category}</Badge>
@@ -60,10 +63,9 @@ export default function BlogIndexPage() {
               <Reveal key={post.slug} delay={i * 0.05}>
                 <Link href={`/blog/${post.slug}`} className="group block h-full">
                   <Card interactive className="flex h-full flex-col">
-                    <div
-                      aria-hidden
-                      className="mb-5 aspect-[16/9] rounded-lg bg-gradient-to-br from-aurora/15 via-slate-800 to-helios/10"
-                    />
+                    <div aria-hidden className="mb-5 overflow-hidden rounded-lg">
+                      <BlogCover category={post.category} />
+                    </div>
                     <div className="flex items-center gap-3 text-xs text-slate-400">
                       <Badge tone="neutral">{post.category}</Badge>
                       <span className="inline-flex items-center gap-1">

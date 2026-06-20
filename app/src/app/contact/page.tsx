@@ -1,5 +1,6 @@
 import { Mail, Handshake, Newspaper, TrendingUp, LifeBuoy } from "lucide-react";
 import { PageHero } from "@/components/sections/PageHero";
+import { NetworkMap } from "@/components/illustrations/NetworkMap";
 import { Container, Section, Eyebrow } from "@/components/ui/primitives";
 import { Card } from "@/components/ui/Card";
 import { Reveal } from "@/components/motion/Reveal";
@@ -29,6 +30,7 @@ export default function ContactPage() {
         eyebrow="Contact"
         title="Let's talk."
         description="Whether you need support, want to partner with us, have a press enquiry, or just want to learn more about what we're building — we'd like to hear from you."
+        visual={<NetworkMap className="mx-auto max-w-[440px]" />}
       />
 
       <Section>
