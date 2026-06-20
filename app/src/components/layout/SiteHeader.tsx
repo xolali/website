@@ -80,7 +80,7 @@ export function SiteHeader() {
         <div className="flex items-center gap-2">
           <ThemeToggle />
           <Link
-            href="/contact"
+            href="/auth/login"
             className="hidden text-sm font-medium text-slate-400 transition-colors hover:text-quartz lg:inline-flex lg:h-10 lg:items-center lg:px-3"
           >
             Log in
@@ -149,7 +149,7 @@ export function SiteHeader() {
                   Get AfroVPN
                 </Button>
                 <Button
-                  href="/contact"
+                  href="/auth/login"
                   variant="secondary"
                   size="lg"
                   onClick={() => setMobileOpen(false)}
